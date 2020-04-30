@@ -1,7 +1,8 @@
 package steps;
+
+import data.URLs;
 import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
-import org.openqa.selenium.WebDriver;
 import pages.Homepage;
 
 @Log4j2
@@ -9,22 +10,15 @@ import pages.Homepage;
 public class HomepageSteps {
     private Homepage homepage;
 
-    public HomepageSteps(WebDriver driver) {
-        homepage = new Homepage(driver);
+    public HomepageSteps() {
+        homepage = new Homepage();
     }
 
-    @Step("User Opens Homepage")
-    public HomepageSteps openHomepageStep(String homepageURL){
-        log.info("User opens Homepage URL: " + homepageURL);
+    @Step("Step 1: User Opens Homepage")
+    public HomepageSteps openHomepageStep() {
+        log.info("User opens Homepage URL: " + URLs.baseURL);
         homepage
-                .openPage();
-        return this;
-    }
-
-    @Step("Validation: is Homepage Opened")
-    public HomepageSteps isHomepageOpenedValidation() {
-        log.info("Validation: is Homepage Opened");
-        homepage
+                .openPage()
                 .isPageOpened();
         return this;
     }

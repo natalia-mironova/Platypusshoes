@@ -3,9 +3,9 @@ package pages;
 import org.openqa.selenium.WebDriver;
 
 public class CartPage extends BasePage{
-    public CartPage(WebDriver driver) {
-        super(driver);
-    }
+//    public CartPage(WebDriver driver) {
+//        super(driver);
+//    }
 
     @Override
     public CartPage isPageOpened() {

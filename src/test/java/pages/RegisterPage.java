@@ -4,7 +4,6 @@ import com.codeborne.selenide.Condition;
 import data.URLs;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import static com.codeborne.selenide.Selenide.$;
@@ -18,10 +17,6 @@ public class RegisterPage extends BasePage {
     WebElement PASSWORDFIELD = $(By.id("password"));
     WebElement CONFIRMPASSWORDFIELD = $(By.id("password-confirmation"));
     WebElement CREATEACCOUNTBUTTON = $(".action.submit");
-
-    public RegisterPage(WebDriver driver) {
-        super(driver);
-    }
 
     @Step("User opens Register page URL")
     public RegisterPage openPage() {

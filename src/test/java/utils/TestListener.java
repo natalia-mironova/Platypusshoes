@@ -11,6 +11,8 @@ import org.testng.ITestResult;
 
 import java.util.concurrent.TimeUnit;
 
+import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
+
 public class TestListener implements ITestListener {
     public void onTestStart(ITestResult iTestResult) {
         System.out.println(String.format("======================================== STARTING TEST %s ========================================", iTestResult.getName()));
@@ -35,9 +37,9 @@ public class TestListener implements ITestListener {
     @Attachment(value = "Last screen state", type = "image/png")
     private byte[] takeScreenshot(ITestResult iTestResult) {
         try {
-            ITestContext context = iTestResult.getTestContext();
-            WebDriver driver = (WebDriver) context.getAttribute("driver");
-            return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+//            ITestContext context = iTestResult.getTestContext();
+//            WebDriver driver = (WebDriver) context.getAttribute("driver");
+            return ((TakesScreenshot) getWebDriver()).getScreenshotAs(OutputType.BYTES);
         } catch (NoSuchSessionException ex) {
             return null;
         } catch (IllegalStateException ex) {

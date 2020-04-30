@@ -1,19 +1,24 @@
 package pages;
 
-import org.openqa.selenium.WebDriver;
+import com.codeborne.selenide.Condition;
+import data.URLs;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.open;
 
 public class MyAccountPage extends BasePage {
-    public MyAccountPage (WebDriver driver) {
-        super(driver);
-    }
 
-    @Override
-    public MyAccountPage isPageOpened() {
-        return null;
-    }
+    WebElement MYACCOUNTDASHBOARDELEMENT = $(By.xpath("//span[contains(text(),'dashboard')]"));
 
-    @Override
     public MyAccountPage openPage() {
-        return null;
+        open(URLs.myAccountPageURL);
+        return this;
+    }
+
+    public MyAccountPage isPageOpened() {
+        $(MYACCOUNTDASHBOARDELEMENT).waitUntil(Condition.visible, 10000);
+        return this;
     }
 }

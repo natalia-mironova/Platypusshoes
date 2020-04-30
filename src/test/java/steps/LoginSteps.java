@@ -7,7 +7,7 @@ public class LoginSteps {
 
     private LoginPage loginPage;
 
-    public LoginSteps(WebDriver driver){
-        loginPage = new LoginPage(driver);
-    }
+//    public LoginSteps(WebDriver driver){
+//        loginPage = new LoginPage(driver);
+//    }
 }
