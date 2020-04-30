@@ -12,7 +12,7 @@ public class RegistrationTests extends BaseTest {
     @Issue("no_issue")
     @TmsLink("555555")
     public void register() {
-        registrationSteps.registerNewUserStep(CustomerData.customerName, CustomerData.customerLastName, CustomerData.customerEmail, CustomerData.customerPassword);
+        registrationSteps.registerNewUserStep(CustomerData.customerName, CustomerData.customerLastName, CustomerData.email, CustomerData.customerPassword);
     }
 
     @Severity(SeverityLevel.NORMAL)
@@ -21,7 +21,7 @@ public class RegistrationTests extends BaseTest {
     @Link("https://staging.platypusshoes.com.au/customer/account/create")
     @Issue("no_issue")
     @TmsLink("555555")
-    public void validateIfMyAccountPageOpened(){
+    public void validateIfMyAccountPageOpened() {
         registrationSteps.isMyAccountPageOpenedAfterRegistration();
     }
 }

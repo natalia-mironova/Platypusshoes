@@ -51,6 +51,7 @@ public class RegisterPage extends BasePage {
     public RegisterPage enterEmail(String email) {
         $(EMAILFIELD).setValue(email);
         return this;
+
     }
 
     @Step("User is entering Password")
