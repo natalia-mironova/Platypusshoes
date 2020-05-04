@@ -25,7 +25,7 @@ public class BaseTest {
     @BeforeMethod(description = "Opening Chrome Driver")
     public void setDriver() {
         Configuration.startMaximized = true;
-        Configuration.timeout = 20;
+        Configuration.timeout = 30;
 
         //initializing Steps' Objects
         homepageSteps = new HomepageSteps();
