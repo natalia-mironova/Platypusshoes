@@ -5,10 +5,7 @@ import lombok.extern.log4j.Log4j2;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
-import steps.HomepageSteps;
-import steps.LoginSteps;
-import steps.MyAccountSteps;
-import steps.RegistrationSteps;
+import steps.*;
 import utils.TestListener;
 
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
@@ -22,6 +19,8 @@ public class BaseTest {
     protected RegistrationSteps registrationSteps;
     protected MyAccountSteps myAccountSteps;
     protected LoginSteps loginSteps;
+    protected ProductListingPageSteps productListingPageSteps;
+    protected ProductDetailsPageSteps productDetailsPageSteps;
 
     @BeforeMethod(description = "Opening Chrome Driver")
     public void setDriver() {
@@ -33,6 +32,8 @@ public class BaseTest {
         registrationSteps = new RegistrationSteps();
         myAccountSteps = new MyAccountSteps();
         loginSteps = new LoginSteps();
+        productListingPageSteps = new ProductListingPageSteps();
+        productDetailsPageSteps = new ProductDetailsPageSteps();
     }
 
     @AfterMethod(alwaysRun = true, description = "Closing Chrome Driver")

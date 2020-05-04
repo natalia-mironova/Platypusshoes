@@ -14,7 +14,6 @@ public class RegistrationSteps {
     public RegistrationSteps() {
         registerPage = new RegisterPage();
         myAccountPage = new MyAccountPage();
-
     }
 
     @Step("Step 1: Account Registration with valid credentials")

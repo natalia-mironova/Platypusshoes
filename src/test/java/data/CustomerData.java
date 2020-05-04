@@ -7,4 +7,5 @@ public class CustomerData {
     public static String customerLastName = "LastName";
     public static String email = UUID.randomUUID().toString() + "@outlook.com";
     public static String customerPassword = "1111111Qq";
+    public static String loginEmail = "natalya.mironova+1@ewave.com";
 }

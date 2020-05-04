@@ -1,23 +1,24 @@
 Checklist for Platypusshoes Project:
 1. Go to Homepage
-2. Go to Register page
-3. Register a new user
-4. Logout
-5. Go to Login page
-6. Login as an existing user
-7. Open My Account page
-8. Edit user info
+2. Search for a product / search term
+3. Go to Register page
+4. Register a new user
+5. Logout
+6. Go to Login page
+7. Login as an existing user
+8. Open My Account page
+9. Edit user info
 
 <<< LOGGED IN USER >>>
-9. Go to Product Listing Page
-10. Load more products
-11. Filter products
-12. Sort products
-13. Open Product Detail page
-14. Add product to Cart
-15. Go to Cart page
-16. Go to Checkout page
-17. Place order
+10. Go to Product Listing Page
+11. Load more products
+12. Filter products
+13. Sort products
+14. Open Product Detail page
+15. Add product to Cart
+16. Go to Cart page
+17. Go to Checkout page
+18. Place order
 
 <<< GUEST USER >>>
-18. Steps 9 - 17
+19. Steps 10 - 18
