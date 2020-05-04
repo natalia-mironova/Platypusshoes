@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 
 public class RegistrationTests extends BaseTest {
     @Severity(SeverityLevel.NORMAL)
-    @Test(description = "Test 1: Account Registration with valid credentials")
+    @Test(description = "Account Registration with valid credentials")
     @Description("Check if user is able to register an account")
     @Link("https://staging.platypusshoes.com.au/customer/account/create")
     @Issue("no_issue")

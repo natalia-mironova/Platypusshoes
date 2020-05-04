@@ -14,7 +14,7 @@ public class HomepageSteps {
         homepage = new Homepage();
     }
 
-    @Step("Step 1: User Opens Homepage")
+    @Step("User Opens Homepage")
     public HomepageSteps openHomepageStep() {
         log.info("User opens Homepage URL: " + URLs.baseURL);
         homepage

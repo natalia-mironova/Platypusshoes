@@ -12,7 +12,7 @@ public class ProductDetailsPageSteps {
         collectProductDetailsPage = new ProductDetailsPage();
     }
 
-    @Step("Step1: User opens PDP")
+    @Step("User opens PDP")
     public ProductDetailsPageSteps openPDPStep() {
         deliveryProductDetailsPage
                 .openPage()
@@ -20,7 +20,7 @@ public class ProductDetailsPageSteps {
         return this;
     }
 
-    @Step("Step 2: User adds 'Delivery' product to Cart")
+    @Step("User adds 'Delivery' product to Cart")
     public ProductDetailsPageSteps addDeliveryProductToCartStep() {
         deliveryProductDetailsPage
                 .openPage()
@@ -30,7 +30,7 @@ public class ProductDetailsPageSteps {
         return this;
     }
 
-    @Step("Step 3: User adds 'C&C' product to Cart")
+    @Step("User adds 'C&C' product to Cart")
     public ProductDetailsPageSteps addClickAndCollectProductToCartStep(int postcode) {
         collectProductDetailsPage
                 .openClickAndCollectPage()

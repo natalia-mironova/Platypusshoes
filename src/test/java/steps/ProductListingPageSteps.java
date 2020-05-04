@@ -10,7 +10,7 @@ public class ProductListingPageSteps {
         productListingPage = new ProductListingPage();
     }
 
-    @Step("Step 1: User loads more products")
+    @Step("User loads more products")
     public ProductListingPageSteps loadMoreStep() {
         productListingPage
                 .openPage()
@@ -19,7 +19,7 @@ public class ProductListingPageSteps {
         return this;
     }
 
-    @Step("Step 2: User applies Black Colour filter")
+    @Step("User applies Black Colour filter")
     public ProductListingPageSteps filterStep() {
         productListingPage
                 .openPage()
@@ -28,7 +28,7 @@ public class ProductListingPageSteps {
         return this;
     }
 
-    @Step("Step 3: User sorts Product Listing Page by highest price")
+    @Step("User sorts Product Listing Page by highest price")
     public ProductListingPageSteps sortStep() {
         productListingPage
                 .openPage()

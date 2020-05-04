@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 
 public class LoginTests extends BaseTest {
     @Severity(SeverityLevel.NORMAL)
-    @Test(description = "Test 1: User loggs in with valid credentials")
+    @Test(description = "User loggs in with valid credentials")
     @Description("Check if existing user is able to login into account")
     @Link("https://staging.platypusshoes.com.au/customer/account/login")
     @Issue("no_issue")

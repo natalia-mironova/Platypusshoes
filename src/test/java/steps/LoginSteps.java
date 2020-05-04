@@ -16,7 +16,7 @@ public class LoginSteps {
         myAccountPage = new MyAccountPage();
     }
 
-    @Step("Step 1: Login with valid credentials")
+    @Step("Login with valid credentials")
     public LoginSteps loginAsExistingUserStep(String email, String password) {
         log.info("User loggs in into an account entering: " + email + ", " + password);
         loginPage

@@ -16,7 +16,7 @@ public class RegistrationSteps {
         myAccountPage = new MyAccountPage();
     }
 
-    @Step("Step 1: Account Registration with valid credentials")
+    @Step("Account Registration with valid credentials")
     public RegistrationSteps registerNewUserStep(String firstName, String lastName, String email, String password) {
         log.info("User registers an account entering: " + firstName + ", " + lastName + ", " + email + ", " + password);
         registerPage
