@@ -10,6 +10,12 @@ public class MyAccountSteps {
         myAccountPage = new MyAccountPage();
     }
 
+    @Step("Open My Account")
+    public MyAccountSteps openMyAccountPage(String email, String password) {
+        myAccountPage.openMyAccountPage(email, password);
+        return this;
+    }
+
     @Step("Validation: is My Account Page opened")
     public MyAccountSteps isMyAccountPageOpened() {
         myAccountPage.isPageOpened();
