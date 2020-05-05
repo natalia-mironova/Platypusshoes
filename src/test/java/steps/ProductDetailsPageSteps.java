@@ -1,15 +1,18 @@
 package steps;
 
 import io.qameta.allure.Step;
+import pages.CartPage;
 import pages.ProductDetailsPage;
 
 public class ProductDetailsPageSteps {
     private ProductDetailsPage deliveryProductDetailsPage;
     private ProductDetailsPage collectProductDetailsPage;
+    private CartPage cartPage;
 
     public ProductDetailsPageSteps() {
         deliveryProductDetailsPage = new ProductDetailsPage();
         collectProductDetailsPage = new ProductDetailsPage();
+        cartPage = new CartPage();
     }
 
     @Step("User opens PDP")
@@ -38,5 +41,13 @@ public class ProductDetailsPageSteps {
                 .addClickAndCollectProductToCart(postcode)
                 .isProductAdded();
         return this;
+    }
+
+    @Step("User clicks 'View or update Cart' link")
+    public CartPage viewOrUpdateCartLinkClick() {
+        deliveryProductDetailsPage
+                .minicartClick()
+                .viewCartLinkClick();
+        return cartPage;
     }
 }

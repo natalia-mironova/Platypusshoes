@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 public class ProductDetailsPageTests extends BaseTest {
     @Severity(SeverityLevel.NORMAL)
     @Test(description = "User opens PDP")
-    @Description("Check if user is able to register an account")
+    @Description("Check if user is able to open PDP")
     @Link("https://staging.platypusshoes.com.au/ct-all-star-lo-19166-blk.html#93=3552")
     @Issue("no_issue")
     @TmsLink("555555")
@@ -33,5 +33,15 @@ public class ProductDetailsPageTests extends BaseTest {
     @TmsLink("555555")
     public void addClickAndCollectProductToCart() {
         productDetailsPageSteps.addClickAndCollectProductToCartStep(ProductData.collectPostcode);
+    }
+
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(description = "User clicks 'View or Update Cart' link in minicart")
+    @Description("Check if user is able to proceed to Cart page from PDP")
+    @Link("https://staging.platypusshoes.com.au/ct-all-star-lo-19166-blk.html#93=3552")
+    @Issue("no_issue")
+    @TmsLink("555555")
+    public void viewCartLinkClick() {
+        productDetailsPageSteps.viewOrUpdateCartLinkClick();
     }
 }
