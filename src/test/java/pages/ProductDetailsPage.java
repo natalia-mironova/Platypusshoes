@@ -76,13 +76,13 @@ public class ProductDetailsPage extends BasePage {
 
     @Step("Click on minicart")
     public ProductDetailsPage minicartClick() {
-        $(MINICARTICON).click();
+        $(MINICARTICON).waitUntil(Condition.visible, 10000).click();
         return this;
     }
 
     @Step("Click 'View or update cart' link in minicart")
     public ProductDetailsPage viewCartLinkClick() {
-        $(VIEWCARTLINK).click();
+        $(VIEWCARTLINK).waitUntil(Condition.visible, 10000).click();
         return this;
     }
 }
