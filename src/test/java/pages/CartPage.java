@@ -21,7 +21,7 @@ public class CartPage extends BasePage {
 
     @Step("Validation: is Cart page opened")
     public CartPage isPageOpened() {
-        $(PRODUCTNAMEELEMENT).waitUntil(Condition.visible, 10000).shouldBe(Condition.visible);
+        $(PRODUCTNAMEELEMENT).waitUntil(Condition.visible, 20000).shouldBe(Condition.visible);
         return this;
     }
 }

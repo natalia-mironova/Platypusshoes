@@ -5,9 +5,9 @@ import data.URLs;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 
 public class ProductDetailsPage extends BasePage {
 
@@ -51,6 +51,7 @@ public class ProductDetailsPage extends BasePage {
 
     @Step("Add product to Cart (Standard Delivery Shipping Method)")
     public ProductDetailsPage addDeliveryProductToCart() {
+        sleep(20000);
         $(SIZEDELIVERY).waitUntil(Condition.appears, 15000).click();
         $(ADDTOCARTBUTTON).waitUntil(Condition.visible, 15000).click();
         return this;
@@ -58,7 +59,8 @@ public class ProductDetailsPage extends BasePage {
 
     @Step("Add product to Cart (Click&Collect Shipping Method)")
     public ProductDetailsPage addClickAndCollectProductToCart(int postcode) {
-        $(SIZECOLLECT).waitUntil(Condition.visible, 15000).click();
+        sleep(20000);
+        $(SIZECOLLECT).waitUntil(Condition.appears, 15000).click();
         $(CLICKANDCOLLECTOPTION).waitUntil(Condition.visible, 15000).click();
         $(COLLECTPOSTCODEFIELD).setValue(String.valueOf(postcode));
         $(CHECKLINK).click();
@@ -76,13 +78,13 @@ public class ProductDetailsPage extends BasePage {
 
     @Step("Click on minicart")
     public ProductDetailsPage minicartClick() {
-        $(MINICARTICON).waitUntil(Condition.visible, 10000).click();
+        $(MINICARTICON).waitUntil(Condition.visible, 20000).click();
         return this;
     }
 
     @Step("Click 'View or update cart' link in minicart")
     public ProductDetailsPage viewCartLinkClick() {
-        $(VIEWCARTLINK).waitUntil(Condition.visible, 10000).click();
+        $(VIEWCARTLINK).waitUntil(Condition.visible, 20000).click();
         return this;
     }
 }

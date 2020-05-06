@@ -1,8 +1,12 @@
 package steps;
 
+import data.URLs;
 import io.qameta.allure.Step;
+import lombok.extern.log4j.Log4j2;
 import pages.CartPage;
 import pages.ProductDetailsPage;
+
+@Log4j2
 
 public class ProductDetailsPageSteps {
     private ProductDetailsPage deliveryProductDetailsPage;
@@ -17,6 +21,7 @@ public class ProductDetailsPageSteps {
 
     @Step("User opens PDP")
     public ProductDetailsPageSteps openPDPStep() {
+        log.info("User opens PDP of 'Delivery' product, " + URLs.deliveryProductPageURL);
         deliveryProductDetailsPage
                 .openPage()
                 .isPageOpened();
@@ -25,6 +30,7 @@ public class ProductDetailsPageSteps {
 
     @Step("User adds 'Delivery' product to Cart")
     public ProductDetailsPageSteps addDeliveryProductToCartStep() {
+        log.info("User adds 'Delivery' product to Cart, " + URLs.deliveryProductPageURL);
         deliveryProductDetailsPage
                 .openPage()
                 .isPageOpened()
@@ -35,6 +41,7 @@ public class ProductDetailsPageSteps {
 
     @Step("User adds 'C&C' product to Cart")
     public ProductDetailsPageSteps addClickAndCollectProductToCartStep(int postcode) {
+        log.info("User adds 'Click&Collect' product to Cart, " + URLs.collectProductPageURL);
         collectProductDetailsPage
                 .openClickAndCollectPage()
                 .isCollectPageOpened()
@@ -46,6 +53,10 @@ public class ProductDetailsPageSteps {
     @Step("User clicks 'View or update Cart' link")
     public CartPage viewOrUpdateCartLinkClick() {
         deliveryProductDetailsPage
+                .openPage()
+                .isPageOpened()
+                .addDeliveryProductToCart()
+                .isProductAdded()
                 .minicartClick()
                 .viewCartLinkClick();
         return cartPage;
