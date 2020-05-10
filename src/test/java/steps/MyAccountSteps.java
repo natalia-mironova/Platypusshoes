@@ -33,7 +33,7 @@ public class MyAccountSteps {
                 .clickLoginButton();
         myAccountPage
                 .isPageOpened()
-                .logout(email, password)
+                .logout()
                 .isLoggedOut();
         return this;
     }

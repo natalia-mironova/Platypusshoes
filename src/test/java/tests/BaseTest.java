@@ -22,6 +22,7 @@ public class BaseTest {
     protected ProductListingPageSteps productListingPageSteps;
     protected ProductDetailsPageSteps productDetailsPageSteps;
     protected CartPageSteps cartPageSteps;
+    protected CheckoutGuestDeliverySteps checkoutGuestDeliverySteps;
 
     @BeforeMethod(description = "Opening Chrome Driver")
     public void setDriver() {
@@ -36,6 +37,7 @@ public class BaseTest {
         productListingPageSteps = new ProductListingPageSteps();
         productDetailsPageSteps = new ProductDetailsPageSteps();
         cartPageSteps = new CartPageSteps();
+        checkoutGuestDeliverySteps = new CheckoutGuestDeliverySteps();
     }
 
     @AfterMethod(alwaysRun = true, description = "Closing Chrome Driver")

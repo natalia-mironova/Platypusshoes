@@ -9,4 +9,6 @@ public class URLs {
     public static String deliveryProductPageURL = baseURL + "ct-all-star-lo-19166-blk.html";
     public static String collectProductPageURL = baseURL + "superstar-originals-foundation-c77124-blk.html";
     public static String cartPageURL = baseURL + "checkout/cart";
+    public static String checkoutURL = baseURL + "checkout/";
+    public static String OSP = baseURL + "checkout/onepage/success/";
 }

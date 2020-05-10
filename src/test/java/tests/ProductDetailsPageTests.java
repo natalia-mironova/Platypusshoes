@@ -44,4 +44,24 @@ public class ProductDetailsPageTests extends BaseTest {
     public void viewCartLinkClick() {
         productDetailsPageSteps.viewOrUpdateCartLinkClick();
     }
+
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(description = "User clicks 'Proceed to Checkout' button in minicart with C&C product in Cart")
+    @Description("Check if user is able to proceed to Checkout page from PDP with C&C product in Cart")
+    @Link("https://staging.platypusshoes.com.au/checkout")
+    @Issue("no_issue")
+    @TmsLink("555555")
+    public void proceedToCheckoutButtonClick() {
+        productDetailsPageSteps.proceedToCheckoutButtonClickCCProduct(ProductData.collectPostcode);
+    }
+
+    @Severity(SeverityLevel.CRITICAL)
+    @Test(description = "User clicks 'Proceed to Checkout' button in minicart with Delivery product in Cart")
+    @Description("Check if user is able to proceed to Checkout page from PDP with Delivery product in Cart")
+    @Link("https://staging.platypusshoes.com.au/checkout")
+    @Issue("no_issue")
+    @TmsLink("555555")
+    public void proceedToCheckoutButtonClickDeliveryProduct() {
+        productDetailsPageSteps.proceedToCheckoutButtonClickDeliveryProduct();
+    }
 }

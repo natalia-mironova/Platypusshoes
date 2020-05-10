@@ -6,16 +6,15 @@ import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 
 public class ProductListingPage extends BasePage {
-    WebElement WOMENSHEADING = $(By.xpath("//*[@id=\"page-title-heading\"]/h1"));
-    WebElement LOADMOREBUTTON = $(By.xpath("//*[@id=\"js_infinity_scroll_load_more\"]"));
-    WebElement COLOURFILTER = $(By.xpath("//*[@id=\"narrow-by-list\"]/div[1]/div[2]/div[2]/div[1]/div"));
-    WebElement BLACKCOLOUR = $(By.xpath("//*[@id=\"facet-colour\"]/li[1]/a/label"));
-    WebElement SORTING = $(By.xpath("//*[@id=\"amasty-shopby-product-list\"]/div[2]/div[2]/div/div/div[1]/div/label/span"));
-    WebElement PRICEDESC = $(By.xpath("//*[@id=\"sorter\"]/a[2]"));
+    WebElement WOMENSHEADING = $(By.xpath("//*[@id='page-title-heading']/h1"));
+    WebElement LOADMOREBUTTON = $(By.xpath("//*[@id='js_infinity_scroll_load_more']"));
+    WebElement COLOURFILTER = $(By.xpath("//*[@id='narrow-by-list']/div[1]/div[2]/div[2]/div[1]/div"));
+    WebElement BLACKCOLOUR = $(By.xpath("//*[@id='facet-colour']/li[1]/a/label"));
+    WebElement SORTING = $(By.xpath("//div[@class='toolbar-sorter sorter filter-options sli_generic_container']"));
+    WebElement PRICEDESC = $(By.xpath("//*[@id='sorter']/a[2]"));
 
     @Step("User opens Product Listing pPage URL")
     public ProductListingPage openPage() {
@@ -25,13 +24,13 @@ public class ProductListingPage extends BasePage {
 
     @Step("Validation: is Product Listing Page opened")
     public ProductListingPage isPageOpened() {
-        $(WOMENSHEADING).waitUntil(Condition.visible, 5000);
+        $(WOMENSHEADING).waitUntil(Condition.visible, 50000);
         return this;
     }
 
     @Step("User clicks 'Load more' button")
     public ProductListingPage loadMore() {
-        $(LOADMOREBUTTON).click();
+        $(LOADMOREBUTTON).waitUntil(Condition.visible, 30000).click();
         return this;
     }
 
@@ -42,8 +41,8 @@ public class ProductListingPage extends BasePage {
 
     @Step("User applies filter option")
     public ProductListingPage filter() {
-        $(COLOURFILTER).click();
-        $(BLACKCOLOUR).click();
+        $(COLOURFILTER).waitUntil(Condition.visible, 30000).click();
+        $(BLACKCOLOUR).waitUntil(Condition.visible, 30000).click();
         return this;
     }
 
@@ -55,7 +54,8 @@ public class ProductListingPage extends BasePage {
     @Step("User applies sorting option")
     public ProductListingPage sort() {
         $(SORTING).click();
-        $(PRICEDESC).click();
+        sleep(10000);
+//        $(PRICEDESC).click();
         return this;
     }
 
