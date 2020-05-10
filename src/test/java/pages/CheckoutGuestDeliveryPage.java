@@ -50,13 +50,13 @@ public class CheckoutGuestDeliveryPage extends BasePage {
         sleep(15000);
         $(CHECKOUTEMAILFIELD).waitUntil(Condition.appears, 20000).setValue(email);
         sleep(10000);
-        $(YOURDETAILSELEMENT).click();
+        $(YOURDETAILSELEMENT).waitUntil(Condition.appears, 10000).click();
         return this;
     }
 
     @Step("User clicks 'Checkout as Guest' button")
     public CheckoutGuestDeliveryPage checkoutAsGuestButtonClick() {
-        $(CHECKOUTASGUESTBUTTON).waitUntil(Condition.appears, 20000).click();
+        $(CHECKOUTASGUESTBUTTON).waitUntil(Condition.appears, 50000).click();
         return this;
     }
 
