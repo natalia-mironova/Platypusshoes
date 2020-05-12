@@ -16,7 +16,7 @@ import static com.codeborne.selenide.WebDriverRunner.url;
 public class CheckoutGuestDeliveryPage extends BasePage {
     WebElement CHECKOUTEMAILFIELD = $(By.id("customer-email"));
     WebElement YOURDETAILSELEMENT = $(By.xpath("//*[text()='Your details']"));
-    WebElement CHECKOUTASGUESTBUTTON = $(By.xpath("//*[@id='customer-email-fieldset']/div[3]/div[2]/div/button[1]"));
+    WebElement CHECKOUTASGUESTBUTTON = $(By.xpath("//*[@id='customer-email-fieldset']//div[3]//div[2]//span[contains(text(),'Checkout as a guest')]"));
     WebElement FIRSTNAMEFIELD = $(".fieldset.address input[name='firstname']");
     WebElement LASTNAME = $(".fieldset.address input[name='lastname']");
     WebElement ADDRESSFIELD = $("#checkout-step-shipping input[name='street[0]']");
@@ -50,19 +50,19 @@ public class CheckoutGuestDeliveryPage extends BasePage {
         sleep(15000);
         $(CHECKOUTEMAILFIELD).waitUntil(Condition.appears, 20000).setValue(email);
         sleep(10000);
-        $(YOURDETAILSELEMENT).waitUntil(Condition.appears, 10000).click();
+        $(YOURDETAILSELEMENT).waitUntil(Condition.appears, 20000).click();
         return this;
     }
 
     @Step("User clicks 'Checkout as Guest' button")
     public CheckoutGuestDeliveryPage checkoutAsGuestButtonClick() {
-        $(CHECKOUTASGUESTBUTTON).waitUntil(Condition.appears, 50000).click();
+        $(CHECKOUTASGUESTBUTTON).waitUntil(Condition.visible, 60000).click();
         return this;
     }
 
     @Step("Validation: is Shipping Step opened")
     public CheckoutGuestDeliveryPage isShippingStepOpened() {
-        $(FIRSTNAMEFIELD).waitUntil(Condition.appears, 10000);
+        $(FIRSTNAMEFIELD).waitUntil(Condition.appears, 20000);
         return this;
     }
 

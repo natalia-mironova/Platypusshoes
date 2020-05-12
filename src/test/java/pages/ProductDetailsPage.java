@@ -39,13 +39,13 @@ public class ProductDetailsPage extends BasePage {
 
     @Step("Is PDP opened")
     public ProductDetailsPage isPageOpened() {
-        $(DELIVERYPRODUCTNAME).waitUntil(Condition.visible, 15000);
+        $(DELIVERYPRODUCTNAME).waitUntil(Condition.visible, 20000);
         return this;
     }
 
     @Step("Is C&C page opened")
     public ProductDetailsPage isCollectPageOpened() {
-        $(COLLECTPRODUCTNAME).waitUntil(Condition.visible, 10000);
+        $(COLLECTPRODUCTNAME).waitUntil(Condition.visible, 20000);
         return this;
     }
 
@@ -71,13 +71,13 @@ public class ProductDetailsPage extends BasePage {
 
     @Step("Is product added to Cart")
     public ProductDetailsPage isProductAdded() {
-        $(ADDTOCARTSUCESSMESSAGE).waitUntil(Condition.visible, 20000);
+        $(ADDTOCARTSUCESSMESSAGE).waitUntil(Condition.visible, 30000);
         return this;
     }
 
     @Step("Click on minicart")
     public ProductDetailsPage minicartClick() {
-        $(MINICARTICON).waitUntil(Condition.visible, 20000).click();
+        $(MINICARTICON).waitUntil(Condition.visible, 30000).click();
         return this;
     }
 
@@ -89,7 +89,7 @@ public class ProductDetailsPage extends BasePage {
 
     @Step("User clicks 'Proceed to Checkout' button in minicart")
     public ProductDetailsPage proceedToCheckoutButtonClick() {
-        $(PROCEEDTOCHECKOUTBUTTON).waitUntil(Condition.visible, 20000).click();
+        $(PROCEEDTOCHECKOUTBUTTON).waitUntil(Condition.visible, 60000).click();
         return this;
     }
 }
