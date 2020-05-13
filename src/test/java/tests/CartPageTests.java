@@ -12,7 +12,7 @@ public class CartPageTests extends BaseTest {
     @Issue("no_issue")
     @TmsLink("555555")
     public void openCartPageWithDeliveryProductInCart() {
-        cartPageSteps.openCartPage();
+        cartPageSteps.openCartPageWithDeliveryProduct();
     }
 
     @Severity(SeverityLevel.NORMAL)

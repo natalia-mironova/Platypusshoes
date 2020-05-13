@@ -22,7 +22,7 @@ public class ProductDetailsPageTests extends BaseTest {
     @Issue("no_issue")
     @TmsLink("555555")
     public void addDeliveryProductToCart() {
-        productDetailsPageSteps.addDeliveryProductToCartStep();
+        productDetailsPageSteps.addDeliveryProductToCart();
     }
 
     @Severity(SeverityLevel.CRITICAL)
@@ -32,7 +32,7 @@ public class ProductDetailsPageTests extends BaseTest {
     @Issue("no_issue")
     @TmsLink("555555")
     public void addClickAndCollectProductToCart() {
-        productDetailsPageSteps.addClickAndCollectProductToCartStep(ProductData.collectPostcode);
+        productDetailsPageSteps.addClickAndCollectProductToCart(ProductData.collectPostcode);
     }
 
     @Severity(SeverityLevel.CRITICAL)
@@ -64,4 +64,8 @@ public class ProductDetailsPageTests extends BaseTest {
     public void proceedToCheckoutButtonClickDeliveryProduct() {
         productDetailsPageSteps.proceedToCheckoutButtonClickDeliveryProduct();
     }
+
+
+
+
 }

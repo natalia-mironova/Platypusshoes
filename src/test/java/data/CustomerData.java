@@ -3,9 +3,9 @@ package data;
 import java.util.UUID;
 
 public class CustomerData {
-    public static String customerName = "FirstName";
-    public static String customerLastName = "LastName";
-    public static String email = UUID.randomUUID().toString() + "@outlook.com";
+    public static String customerName = "AutotestFirstname";
+    public static String customerLastName = "AutotestLastname";
+    public static String email = UUID.randomUUID().toString() + ".AUTOTEST@outlook.com";
     public static String customerPassword = "1111111Qq";
     public static String loginEmail = "natalya.mironova+1@ewave.com";
     public static String guestCustomerAddress = "12 Oxford Street";

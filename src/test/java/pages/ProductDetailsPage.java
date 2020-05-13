@@ -38,13 +38,13 @@ public class ProductDetailsPage extends BasePage {
         return this;
     }
 
-    @Step("Is PDP opened")
+    @Step("Is Delivery product PDP opened")
     public ProductDetailsPage isPageOpened() {
         $(DELIVERYPRODUCTNAME).waitUntil(Condition.visible, 20000);
         return this;
     }
 
-    @Step("Is C&C page opened")
+    @Step("Is C&C product PDP opened")
     public ProductDetailsPage isCollectPageOpened() {
         $(COLLECTPRODUCTNAME).waitUntil(Condition.visible, 20000);
         return this;

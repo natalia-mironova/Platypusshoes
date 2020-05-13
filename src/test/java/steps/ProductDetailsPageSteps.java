@@ -4,7 +4,7 @@ import data.URLs;
 import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
 import pages.CartPage;
-import pages.CheckoutGuestDeliveryPage;
+import pages.CheckoutPage;
 import pages.ProductDetailsPage;
 
 @Log4j2
@@ -13,13 +13,13 @@ public class ProductDetailsPageSteps {
     private ProductDetailsPage deliveryProductDetailsPage;
     private ProductDetailsPage collectProductDetailsPage;
     private CartPage cartPage;
-    private CheckoutGuestDeliveryPage checkoutPage;
+    private CheckoutPage checkoutPage;
 
     public ProductDetailsPageSteps() {
         deliveryProductDetailsPage = new ProductDetailsPage();
         collectProductDetailsPage = new ProductDetailsPage();
         cartPage = new CartPage();
-        checkoutPage = new CheckoutGuestDeliveryPage();
+        checkoutPage = new CheckoutPage();
     }
 
     @Step("User opens PDP")
@@ -32,7 +32,7 @@ public class ProductDetailsPageSteps {
     }
 
     @Step("User adds 'Delivery' product to Cart")
-    public ProductDetailsPageSteps addDeliveryProductToCartStep() {
+    public ProductDetailsPageSteps addDeliveryProductToCart() {
         log.info("User adds 'Delivery' product to Cart, " + URLs.deliveryProductPageURL);
         deliveryProductDetailsPage
                 .openPage()
@@ -43,7 +43,7 @@ public class ProductDetailsPageSteps {
     }
 
     @Step("User adds 'C&C' product to Cart")
-    public ProductDetailsPageSteps addClickAndCollectProductToCartStep(int postcode) {
+    public ProductDetailsPageSteps addClickAndCollectProductToCart(int postcode) {
         log.info("User adds 'Click&Collect' product to Cart, " + URLs.collectProductPageURL);
         collectProductDetailsPage
                 .openClickAndCollectPage()
@@ -66,7 +66,7 @@ public class ProductDetailsPageSteps {
     }
 
     @Step("User clicks 'Proceed to Checkout' button in minicart with 'Delivery' product added")
-    public CheckoutGuestDeliveryPage proceedToCheckoutButtonClickDeliveryProduct() {
+    public CheckoutPage proceedToCheckoutButtonClickDeliveryProduct() {
         deliveryProductDetailsPage
                 .openPage()
                 .isPageOpened()
@@ -78,7 +78,7 @@ public class ProductDetailsPageSteps {
     }
 
     @Step("User clicks 'Proceed to Checkout' button in minicart with 'C&C' product added")
-    public CheckoutGuestDeliveryPage proceedToCheckoutButtonClickCCProduct(int postcode) {
+    public CheckoutPage proceedToCheckoutButtonClickCCProduct(int postcode) {
         collectProductDetailsPage
                 .openClickAndCollectPage()
                 .isCollectPageOpened()

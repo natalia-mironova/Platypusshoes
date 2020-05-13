@@ -21,7 +21,7 @@ public class CartPageSteps {
     }
 
     @Step("User navigates to Cart page ('Delivery' product in the Cart)")
-    public CartPageSteps openCartPage() {
+    public CartPageSteps openCartPageWithDeliveryProduct() {
         log.info("User adds 'Delivery' product: " + URLs.deliveryProductPageURL + " to Cart and navigates to Cart page " + URLs.cartPageURL);
         deliveryProductDetailsPage
                 .openPage()
