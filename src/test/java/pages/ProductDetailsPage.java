@@ -60,30 +60,30 @@ public class ProductDetailsPage extends BasePage {
     @Step("Add product to Cart (Click&Collect Shipping Method)")
     public ProductDetailsPage addClickAndCollectProductToCart(int postcode) {
         sleep(20000);
-        $(SIZECOLLECT).waitUntil(Condition.appears, 30000).click();
-        $(CLICKANDCOLLECTOPTION).waitUntil(Condition.visible, 20000).click();
+        $(SIZECOLLECT).waitUntil(Condition.appears, 50000).click();
+        $(CLICKANDCOLLECTOPTION).waitUntil(Condition.visible, 50000).click();
         $(COLLECTPOSTCODEFIELD).setValue(String.valueOf(postcode));
         $(CHECKLINK).click();
-        $(COLLECTSTORE).waitUntil(Condition.visible, 15000).click();
-        $(BUYANDCOLLECTBUTTON).waitUntil(Condition.visible, 15000).click();
+        $(COLLECTSTORE).waitUntil(Condition.visible, 50000).click();
+        $(BUYANDCOLLECTBUTTON).waitUntil(Condition.visible, 50000).click();
         return this;
     }
 
     @Step("Is product added to Cart")
     public ProductDetailsPage isProductAdded() {
-        $(ADDTOCARTSUCESSMESSAGE).waitUntil(Condition.visible, 30000);
+        $(ADDTOCARTSUCESSMESSAGE).waitUntil(Condition.visible, 60000);
         return this;
     }
 
     @Step("Click on minicart")
     public ProductDetailsPage minicartClick() {
-        $(MINICARTICON).waitUntil(Condition.visible, 30000).click();
+        $(MINICARTICON).waitUntil(Condition.visible, 60000).click();
         return this;
     }
 
     @Step("Click 'View or update cart' link in minicart")
     public ProductDetailsPage viewCartLinkClick() {
-        $(VIEWCARTLINK).waitUntil(Condition.visible, 20000).click();
+        $(VIEWCARTLINK).waitUntil(Condition.visible, 60000).click();
         return this;
     }
 
